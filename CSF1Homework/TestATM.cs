@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace CSF1Homework
 {
-    class Program
+    class TestATM
     {
         static void Main(string[] args)
         {
-        }
-    }
-}
+
+        }//end svm
+    }//end class
+}//end namespace
