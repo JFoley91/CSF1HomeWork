@@ -14,67 +14,65 @@ namespace CSF1Homework
             int depositAmount = 0;
             int withdrawAmount = 0;
 
+            int failedAttempt = 0;
             int maxAttempt = 3;
 
-            int option;
-            int pin = 0;
+            int option = 0;
+            int pin;
 
-            Console.Write("ENTER YOUR PIN: ");
-            pin = int.Parse(Console.ReadLine());
-
-            if (pin == 1382)
+            bool repeat = true;
+            do
             {
-                Console.WriteLine(@"
+                Console.Write("ENTER YOUR PIN: ");
+                pin = int.Parse(Console.ReadLine());
+
+                while (pin == 1382 && option != 4)
+                {
+                    Console.WriteLine(@"
 ------SELECT ATM SERVICE------
 1. Balance
 2. Withdrawl
 3. Deposit
-4. Exit" );
-                Console.Write("Please Select an Option: ");
-                option = int.Parse(Console.ReadLine());
+4. Exit");
+                    Console.Write("Please Select an Option: ");
+                    option = int.Parse(Console.ReadLine());
 
-                switch (option)
-                {
-                    case 1:
-                        Console.Write("\nYour total account balanace: $" + totalBalance);
+                    switch (option)
+                    {
+                        case 1:
+                            Console.Write("\nYour total account balanace: $" + totalBalance);
                             break;
-                    case 2:
-                        Console.Write("\nEnter withdrawl amount: ");
-                        withdrawAmount = int.Parse(Console.ReadLine());
-                        if (withdrawAmount % 100 !=0)
-                        {
-                            Console.WriteLine("\nPlease enter withdrawl amount in multiples of 100");
-                        }
-                        else if (withdrawAmount > totalBalance)
-                        {
-                            Console.WriteLine("\nInsufficient Balance");
-                        }
-                        else
-                        {
-                            totalBalance = totalBalance - withdrawAmount;
-                            Console.WriteLine("\nPlease Collect your money");
-                            Console.WriteLine("\n your remaining balance is: $" + totalBalance);
-                        }
-                        break;
-                    case 3:
-                        Console.Write("\nEnter depoist amount: ");
-                          depositAmount = int.Parse(Console.ReadLine());
-                        totalBalance = totalBalance + depositAmount;
-                        Console.WriteLine("Your Current Balance: $" + totalBalance);
-                        break;
-                    case 4:
-                        Console.WriteLine("Thank you for your business, Goodbye!");
-                        break;
-                }
-            }
-            else
-            {
-               while ( maxAttempt >= 0)
-                {
-                    Console.WriteLine("Invalid Pin, Try Again");
-                }
-            }
-                
+                        case 2:
+                            Console.Write("\nEnter withdrawl amount: ");
+                            withdrawAmount = int.Parse(Console.ReadLine());
+                            if (withdrawAmount % 100 != 0)
+                            {
+                                Console.WriteLine("\nPlease enter withdrawl amount in multiples of 100");
+                            }
+                            else if (withdrawAmount > totalBalance)
+                            {
+                                Console.WriteLine("\nInsufficient Balance");
+                            }
+                            else
+                            {
+                                totalBalance = totalBalance - withdrawAmount;
+                                Console.WriteLine("\nPlease Collect your money");
+                                Console.WriteLine("\n your remaining balance is: $" + totalBalance);
+                            }
+                            break;
+                        case 3:
+                            Console.Write("\nEnter depoist amount: ");
+                            depositAmount = int.Parse(Console.ReadLine());
+                            totalBalance = totalBalance + depositAmount;
+                            Console.WriteLine("Your Current Balance: $" + totalBalance);
+                            break;
+                        case 4:
+                            Console.WriteLine("Thank you for your business, Goodbye!");
+                            repeat = false;
+                            break;
+                    }//end switch
+                }//end while
+            } while (repeat);//end do while
         }//end smv
     }//end class
 }//end namespace
