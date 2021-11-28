@@ -52,7 +52,7 @@
     <Compile Include="MadLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tempconversion.cs" />
-    <Compile Include="TestATM.cs" />
+    <Compile Include="UserLogin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

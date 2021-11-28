@@ -35,11 +35,11 @@ Please Pick from the following:
 
                         double C2 = (F2 - 32) * 5 / 9;
                         Console.WriteLine("Fahrenheit: {0} --> Celsius: {1}", F2, C2);
+                        Console.WriteLine("Do you have another Temperature? Y/N: ");
+                        ConsoleKey runProgram = Console.ReadKey(false).Key;
                         break;
 
                     default:
-                        Console.WriteLine("Do you have another Temperature? ");
-                        string runProgram = Console.ReadLine().ToUpper();                       
                         break;
                }
             } while (false);

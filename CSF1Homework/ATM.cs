@@ -14,8 +14,8 @@ namespace CSF1Homework
             int depositAmount = 0;
             int withdrawAmount = 0;
 
-            int failedAttempt = 0;
-            int maxAttempt = 3;
+            int loginAttempt = 0;
+            for (int i = 0; i < 3; i++) ;
 
             int option = 0;
             int pin;
@@ -71,6 +71,10 @@ namespace CSF1Homework
                             repeat = false;
                             break;
                     }//end switch
+                    if (loginAttempt > 2)
+                        Console.WriteLine("Login failure");
+                    else
+                        Console.WriteLine("Login successful");
                 }//end while
             } while (repeat);//end do while
         }//end smv
