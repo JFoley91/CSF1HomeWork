@@ -70,12 +70,12 @@ namespace CSF1Homework
                             Console.WriteLine("Thank you for your business, Goodbye!");
                             repeat = false;
                             break;
-                    }//end switch
-                    if (loginAttempt > 2)
-                        Console.WriteLine("Login failure");
-                    else
-                        Console.WriteLine("Login successful");
+                    }//end switch                           
                 }//end while
+                while( loginAttempt >= 3)
+                {
+                    Console.WriteLine("Please Try Again");
+                }
             } while (repeat);//end do while
         }//end smv
     }//end class

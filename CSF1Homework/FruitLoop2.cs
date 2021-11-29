@@ -12,16 +12,20 @@ namespace CSF1Homework
         {
 
             string[] fruit = { "apple", "banana", "grape", "plum", "kiwi", "tomato" };
-            string[] period = {"One Period", "Two Period", "Three Period", "Four Period," +
-                    "Five Period", "Six Period" } ;
+            string[] dot = { "one dot", "two dots", "three dots", "four dots", "five dots", "six dots" };
 
-            for (int i = 0; i < fruit.Length; i++)
+            string dots = "";
+
+            for (int f = 0; f < fruit.Length; f++)
             {
-                for (int n = 0; n < period.Length; n++)
-                {
-                    Console.WriteLine(fruit[i] + "\n" + period[i]);
-                }
+              
+                    dots += ".";
+                    Console.WriteLine(fruit[f] +
+                        "\n" + dot[f] + dots);
+                
+
             }
+
 
 
 

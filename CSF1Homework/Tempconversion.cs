@@ -10,6 +10,7 @@ namespace CSF1Homework
     {
         static void Main(string[] args)
         {
+            bool reRun = true;
             do
             {
                 Console.WriteLine(@"
@@ -27,6 +28,11 @@ Please Pick from the following:
                         double F = (C * 1.8) + 32;
 
                         Console.WriteLine("Celsius: {0} --> Fahrenheit: {1}", C, F);
+                        Console.WriteLine("Do you want to go again? Y or N? ");
+                        string input = (Console.ReadLine());
+                        if (input == "N")
+                            reRun = false;
+                        Console.WriteLine("GoodBye");
                         break;
 
                     case "2":
@@ -35,17 +41,15 @@ Please Pick from the following:
 
                         double C2 = (F2 - 32) * 5 / 9;
                         Console.WriteLine("Fahrenheit: {0} --> Celsius: {1}", F2, C2);
-                        Console.WriteLine("Do you have another Temperature? Y/N: ");
-                        ConsoleKey runProgram = Console.ReadKey(false).Key;
+
+                        Console.WriteLine("Do you want to go again? Y or N? ");
+                        string input2 = (Console.ReadLine());
+                        if (input2 == "N")                            
+                            reRun = false;
+                        Console.WriteLine("GoodBye");
                         break;
-
-                    default:
-                        break;
-               }
-            } while (false);
-
-
-
+                }
+            } while (reRun);
         }//end svm
     }//end class
 }// end namespace
