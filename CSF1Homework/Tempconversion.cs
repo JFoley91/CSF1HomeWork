@@ -15,14 +15,14 @@ namespace CSF1Homework
             {
                 Console.WriteLine(@"
 Please Pick from the following:
-1) Celsisu to Fahrenheit
-2) Fahrenheit to Celisu
+1) Celsius to Fahrenheit
+2) Fahrenheit to Celsius
 ");
                 string userInput = Console.ReadLine();
                 switch (userInput)
                 {
                     case "1":
-                        Console.Write("Please Enter your Celsisu Temperature: ");
+                        Console.Write("Please Enter your Celsius Temperature: ");
                         double C = Convert.ToDouble(Console.ReadLine());
 
                         double F = (C * 1.8) + 32;
