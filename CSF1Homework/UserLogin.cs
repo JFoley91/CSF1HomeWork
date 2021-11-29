@@ -10,10 +10,10 @@ namespace CSF1Homework
     {
         static void Main(string[] args)
         {
-            //Login Attempts counter
+            
             int loginAttempts = 0;
 
-            //Simple iteration upto three times
+            
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine("Enter username");
@@ -30,8 +30,7 @@ namespace CSF1Homework
                 else
                     break;
             }
-
-            //Display the result
+            
             if (loginAttempts > 2)
                 Console.WriteLine("Login failure");
             else
